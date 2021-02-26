@@ -21,17 +21,20 @@ void* run(void *arg)
   long long ret = 0; 
   for (long long i = from+1; i <= to; i++) 
   { 
-    ret += i; } 
+    ret += i; 
+  } 
   return (void*)ret; 
 } 
 int main() 
 { 
-  int n; cout << "CPU number : " << sysconf(_SC_NPROCESSORS_CONF) << endl; 
+  int n;
+  cout << "CPU number : " << sysconf(_SC_NPROCESSORS_CONF) << endl; 
   cout << "Please enter the number of threads used: "; 
   cin >> n; 
   pthread_t pthid[n] = {0}; 
   pthread_mutex_init(&mutex, NULL); 
-  long long from, to; //计时 
+  long long from, to; 
+  //计时 
   auto start = std::chrono::system_clock::now(); 
   std::time_t start_time = std::chrono::system_clock::to_time_t(start);
   cout << "start time: " << std::ctime(&start_time);

@@ -3,8 +3,10 @@
 #include <thread> 
 #include <future> 
 #include <condition_variable>
-#include <mutex> #include <chrono> 
-#include <ctime> #include <algorithm> 
+#include <mutex> 
+#include <chrono> 
+#include <ctime>
+#include <algorithm> 
 using namespace std;
 const long long N = 900000000; 
 mutex m; 

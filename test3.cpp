@@ -6,7 +6,7 @@
 #include <pthread.h> 
 #include <unistd.h> 
 using namespace std; 
-const long long N = 900000000; 
+const long long N = 90000000; 
 typedef struct A{ 
   long long from;
   long long to; 

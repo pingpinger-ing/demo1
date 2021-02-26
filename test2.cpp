@@ -19,9 +19,13 @@ long long run(long long from, long long to)
 } 
 
 int main() 
-{ int n; 
+{
+ int n; 
  long long sum = 0; 
- cout << "CPU number : " << thread::hardware_concurrency() << endl; cout << "Please enter the number of threads used: "; cin >> n; //计时 
+ cout << "CPU number : " << thread::hardware_concurrency() << endl; 
+ cout << "Please enter the number of threads used: "; 
+ cin >> n; 
+ //计时 
  auto start = std::chrono::system_clock::now(); 
  vector<future<long long>> result; 
  std::time_t start_time = std::chrono::system_clock::to_time_t(start); 

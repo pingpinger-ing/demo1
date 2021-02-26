@@ -42,7 +42,7 @@ int main()
         pthread_join(thread_handles[thread], NULL);
     gettimeofday(&tv2, NULL);
     // 输出高维加法执行时间
-    printf("4 pieces",
+    printf("4p",
            " takes %ld us\n",
            (tv2.tv_sec - tv1.tv_sec) * 1000000 + tv2.tv_usec - tv1.tv_usec);
  

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <thread.h>
+#include <thread>
 int main() {
 	long times = 500000000;
 	measure([times]() {           //双线程

@@ -1,32 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <pthread.h>
-#include <thread>
-using namespace std;
-int main() {
-	long times = 500000000;
-	measure([times]() {           //双线程
-		long ans1 = 0, ans2 = 0;
-		std:：thread t1 = thread(NumberAdd, 0, times / 2, ref(ans1));
-		std:：thread t2 = thread(NumberAdd, times / 2, times, ref(ans2));
-		t1.join();
-		t2.join();
-		cout << "result of two treads: " << ans1 + ans2 << endl;
-		}
-	);
-	
-	measure([times]() {           //单线程
-		long ans = 0;
-		NumberAdd(0, times, ans);
-		cout << "result of single treads: " << ans<< endl;
-		}
-	);
-}
-void NumberAdd(long start, long end, long &ans) {
-	int sum = 0;
-	for (long i = start; i < end; i++) 
-		sum = sum + 1;
-	ans = sum;
-}
+#include <iostream> 
+#include <chrono> 
+#include <ctime> 
+#define N 900000000 
+using namespace std; 
+int main(){ long long sum = 0; 
+	   auto start = std::chrono::system_clock::now(); 
+	   std::time_t start_time = std::chrono::system_clock::to_time_t(start); 
+	   cout << "开始时间: " << std::ctime(&start_time); 
+	   for(long long i = 1; i <= N; ++i){ sum += i; } 
+	   auto end = std::chrono::system_clock::now(); 
+	   std::chrono::duration<double> elapsed_seconds = end-start; 
+	   std::time_t end_time = std::chrono::system_clock::to_time_t(end); 
+	   cout << "sum = " << sum << endl; cout << "结束时间: " << std::ctime(&end_time); 
+	   cout << "用 时: " << elapsed_seconds.count() << "s" << endl; return 0; 
+	  }
+
 
 

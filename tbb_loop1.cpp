@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     {
         for (int i=r.begin(); i<r.end(); ++i)
         {
-            values[i] = i ;
+            values[i] = std::sin(i) ;
         }
     });
 

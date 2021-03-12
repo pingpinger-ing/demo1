@@ -4,11 +4,11 @@
 
 int main(int argc, char **argv)
 {
-    auto values = std::vector<double>(10000);
+    auto values = std::vector<double>(1000000000);
     
     for (int i=0; i<values.size(); ++i)
     {
-        values[i] = std::sin(i * 0.001);
+        values[i] = std::i ;
     }
 
     double total = 0;

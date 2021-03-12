@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     
     for (int i=0; i<values.size(); ++i)
     {
-        values[i] = std::i ;
+        values[i] = i ;
     }
 
     double total = 0;
